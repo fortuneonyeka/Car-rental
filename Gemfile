@@ -22,6 +22,20 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use faker to generate sample users
+gem 'faker'
+# Use for Pagination
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+# Use ransack for Search 
+gem 'ransack'
+# Use for backgroud processing
+gem 'sidekiq'
+# Redis-backed Ruby library for creating background jobs
+gem 'resque'
+# A light-weight job scheduling system built on top of resque
+gem 'resque-scheduler'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
