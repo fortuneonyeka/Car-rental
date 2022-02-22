@@ -87,7 +87,7 @@ class UsersController < ApplicationController
 
      # Before filters
     
-     def can_destroy
+    def can_destroy
       @user = User.find(params[:id])
       if ["root_superadmin@email.com", "root_admin@email.com"].include?(@user.email) || current_user?(@user)
         flash[:danger] = 'Prefigured admin or self cannot be deleted!'
