@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+  
+  <%
+=begin%>
+ <%= link_to 'Log Out', destroy_user_session > 
+<%
+=end%>
 <h1>Cars</h1>
-
 <table>
   <thead>
     <tr>
@@ -26,14 +30,18 @@
         <td><%= car.style %></td>
         <td><%= car.location %></td>
         <td><%= car.status %></td>
-        <td><%= link_to 'Show', car %></td>
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+ <td><%= link_to 'Show', car %></td> 
       </tr>
     <% end %>
   </tbody>
 </table>
+ 
+    <%
+=begin%>
+ <strong>You must sign in!</strong>
+    <%= link_to 'Sign In', new_user_session %> |
+    <%= link_to 'Sign Up',new_user_registration_url %>  
+<%
+=end%>
 
-<br>
-
-<%= link_to 'New Car', new_car_path %>

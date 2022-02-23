@@ -9,9 +9,7 @@ class CarsController < ApplicationController
   # GET /cars or /cars.json
   def index
     @cars = Car.all
-    render json: {
-      cars: @cars
-    }, status: 200
+    # 
   end
 
   # GET /cars/1 or /cars/1.json

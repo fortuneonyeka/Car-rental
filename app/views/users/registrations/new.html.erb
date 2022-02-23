@@ -1,8 +1,19 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+
+
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
+  <%
+=begin%>
+ <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div> 
+<%
+=end%>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -24,6 +35,6 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+<% end %> 
 
 <%= render "users/shared/links" %>
