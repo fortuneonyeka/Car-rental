@@ -8,12 +8,10 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    # if isAdmin? || isSuperAdmin?
-    #   @q_cars = Car.ransack(params[:q])
-    # elsif isCustomer?
-    #   @q_cars = Car.where.not(status: "Suggested").ransack(params[:q])
-    # end
-    # @cars = @q_cars.result().paginate(page: params[:page])
+    @cars = Car.all
+    render json: {
+      cars: @cars
+    }, status: 200
   end
 
   # GET /cars/1 or /cars/1.json

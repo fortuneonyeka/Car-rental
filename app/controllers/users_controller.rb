@@ -10,14 +10,14 @@ class UsersController < ApplicationController
   
 
   # GET /users or /users.json
-  def index
-     if isAdmin?
-      @q_users = User.where.not(role: "SuperAdmin").ransack(params[:q])
-    else
-      @q_users = User.ransack(params[:q])
-    end
-    @users = @q_users.result().paginate(page: params[:page])
-  end
+  # def index
+  #    if isAdmin?
+  #     @q_users = User.where.not(role: "SuperAdmin").ransack(params[:q])
+  #   else
+  #     @q_users = User.ransack(params[:q])
+  #   end
+  #   @users = @q_users.result().paginate(page: params[:page])
+  # end
 
   # GET /users/1 or /users/1.json
   def show
@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :role, :rentalCharge, :notification, :available)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
      # Before filters
