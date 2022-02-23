@@ -1,10 +1,5 @@
 <p id="notice"><%= notice %></p>
-  
-  <%
-=begin%>
- <%= link_to 'Log Out', destroy_user_session > 
-<%
-=end%>
+
 <h1>Cars</h1>
 <table>
   <thead>
@@ -36,12 +31,4 @@
     <% end %>
   </tbody>
 </table>
- 
-    <%
-=begin%>
- <strong>You must sign in!</strong>
-    <%= link_to 'Sign In', new_user_session %> |
-    <%= link_to 'Sign Up',new_user_registration_url %>  
-<%
-=end%>
 
