@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkOutTime: 2022-02-24 12:27:20
+  pickUpTime: 2022-02-24 12:27:20
+  expectedReturnTime: 2022-02-24 12:27:20
+  returnTime: 2022-02-24 12:27:20
+  status: MyString
+  user: one
+  car: one
+
+two:
+  checkOutTime: 2022-02-24 12:27:20
+  pickUpTime: 2022-02-24 12:27:20
+  expectedReturnTime: 2022-02-24 12:27:20
+  returnTime: 2022-02-24 12:27:20
+  status: MyString
+  user: two
+  car: two

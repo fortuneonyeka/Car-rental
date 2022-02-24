@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_23_163216) do
+ActiveRecord::Schema.define(version: 2022_02_24_112720) do
 
   create_table "cars", force: :cascade do |t|
     t.string "licensePlateNumber"
@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 2022_02_23_163216) do
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "checkOutTime", null: false
+    t.datetime "pickUpTime"
+    t.datetime "expectedReturnTime", null: false
+    t.datetime "returnTime"
+    t.string "status", default: "Awaiting"
+    t.integer "user_id", null: false
+    t.integer "car_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_reservations_on_car_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +51,6 @@ ActiveRecord::Schema.define(version: 2022_02_23_163216) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reservations", "cars"
+  add_foreign_key "reservations", "users"
 end
