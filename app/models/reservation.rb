@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
   belongs_to :car
 
 
-  validates :status, inclusion: {in: statuses}
+  validates :reservationStatus, inclusion: {in: reservationStatuses}
   validates :checkOutTime, presence: true
   validates :expectedReturnTime, presence: true
 

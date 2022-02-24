@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_112720) do
     t.datetime "pickUpTime"
     t.datetime "expectedReturnTime", null: false
     t.datetime "returnTime"
-    t.string "status", default: "Awaiting"
+    t.string "reservationStatus", default: "Awaiting"
     t.integer "user_id", null: false
     t.integer "car_id", null: false
     t.datetime "created_at", precision: 6, null: false

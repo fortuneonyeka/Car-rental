@@ -5,7 +5,7 @@ class CreateReservations < ActiveRecord::Migration[6.1]
       t.timestamp :pickUpTime, null: true
       t.timestamp :expectedReturnTime, null: false
       t.timestamp :returnTime, null: true
-      t.string :status, default: "Awaiting"
+      t.string :reservationStatus, default: "Awaiting"
       t.references :user, null: false, foreign_key: true
       t.references :car, null: false, foreign_key: true
 
